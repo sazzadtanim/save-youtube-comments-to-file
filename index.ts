@@ -1,8 +1,9 @@
+import { config } from "dotenv";
 import { writeFile } from "fs";
 import { google } from "googleapis";
-require("dotenv").config();
 
-console.log(process.env.GOOGLE_API_KEY);
+// this should be done before accessing api keys from .env
+config();
 
 const youtube = google.youtube({
   version: "v3",

@@ -1,9 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+const dotenv_1 = require("dotenv");
 const fs_1 = require("fs");
 const googleapis_1 = require("googleapis");
-require("dotenv").config();
-console.log(process.env.GOOGLE_API_KEY);
+// this should be done before accessing api keys from .env
+(0, dotenv_1.config)();
 const youtube = googleapis_1.google.youtube({
     version: "v3",
     auth: process.env.GOOGLE_API_KEY,
